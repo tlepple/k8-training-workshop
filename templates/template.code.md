@@ -145,14 +145,17 @@ azure_default_remember_me=true
 ---
 ---
 
+# End of Docker Stuff
 
 ---
+---
 
-# K8s - Hands On Exercise and Notes
-
-* The goal of this document is to capture details that mimic a current set of administration tasks that currently are run from a docker container and migrate this container to be run inside of Kubernetes.
+# Begin K8 Stuff
 
 ---
+---
+
+# K8s - Hands On Exercises
 
 ---
 ---
