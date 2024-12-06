@@ -34,7 +34,7 @@ Tags:  Kubernetes | K8s | Docker | Ubuntu
 
 ---
 
-1.  **Verify**:
+1.  **Connect into our new container**:
    - Connect to the running container and check this directory exists`/app/pim` to ensure the Git repository has been cloned or updated as expected. This container does not run like most docker containers, it is operating more like a linux VM.   It will run continously until you shut it down.
 
   ```
