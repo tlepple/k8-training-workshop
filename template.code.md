@@ -34,3 +34,36 @@ kubectl apply -f ecr-secret.yaml --namespace=<YOUR NAMESPACE HERE>
 ```bash
 kubectl apply -f az_secrets.yaml --namespace=<YOUR NAMESPACE HERE>
 ```
+
+---
+
+### Create your POD 
+
+```bash
+kubectl apply -f pod.yaml --namespace=<YOUR NAMESPACE HERE>
+```
+
+---
+
+### List your new POD 
+
+```bash
+kubectl get pods --namespace=<YOUR NAMESPACE HERE>
+```
+
+---
+
+### Describe your new POD 
+
+```bash
+kubectl describe pod awsbuild-pod --namespace=<YOUR NAMESPACE HERE>
+```
+
+
+---
+
+### Validate PVC is bound
+
+```bash
+kubectl get pvc efs-claim-tim --namespace=<YOUR NAMESPACE HERE>
+```
