@@ -62,13 +62,6 @@ kubectl apply -f pod.yaml --namespace=<YOUR NAMESPACE HERE>
 
 ---
 
-### Connect into your new pod POD 
-
-```bash
-kubectl exec -it awsbuild-pod --namespace=<YOUR NAMESPACE HERE> -- /bin/bash
-```
----
-
 ### List your PODs
 
 ```bash
@@ -94,6 +87,145 @@ kubectl get pvc efs-claim-<YOUR NAMESPACE HERE> --namespace=<YOUR NAMESPACE HERE
 
 
 ---
+
+# add the validate code here
+
+
+---
+## **Test that the POD works as expected**
+
+### Connect into your new pod POD 
+
+```bash
+kubectl exec -it awsbuild-pod --namespace=<YOUR NAMESPACE HERE> -- /bin/bash
+```
+---
+
+Setup a local aws config file with profiles you have access to from Azure AD credentials
+
+ ```
+cd /app/pim
+az login 
+ ```
+
+ *  This will return output similar to this:
+
+ ```
+To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code <your specfic code>  to authenticate.
+ ```
+6.  Authenticate to Azure AD:   
+    1. Open a chrome browser on your host and give it the URL `https://microsoft.com/devicelogin`.   
+    2. It will ask you to enter the code from your container `<your specfic code>`.   
+    3. From here you will select your Microsoft AD account.  
+    4. Then click the `Continue` button from the next screen.
+    5. In the returned output choose `1` which should be associated with Tenant ` NX1-Cloudera-CDP-Operations`
+    
+      
+    
+7.  Extract from Azure AD account profiles you are authorized to access in preparation for next steps.
+
+ ```
+ cd /app/pim
+ python3 create_config.py
+ ```
+
+8.  Setup aws configuration files with Account Profiles gathered in previous step.
+
+ ```
+. update_config.sh
+ ```
+
+
+*  It will prompt you for some input.   Sample output here:
+
+ ```
+ Enter Azure AD Username: <input your cloudera-cdp.com email address here>
+ Enter AWS Session Role Name: <input your role name to include here> Example:  CDPOne_FullAccess
+ Updated configuration merged into ~/.aws/config successfully.
+  ```
+
+**Validate it worked with this command:** `cat ~/.aws/config`
+
+**Sample Output**:
+
+```text
+[profile cazenapoc]
+azure_tenant_id=<TENANT ID>
+azure_app_id_uri=<APP ID>
+azure_default_username=<YOUR CDP EMAIL ADDRESS>
+azure_default_role_arn=CDPOne_FullAccess
+azure_default_duration_hours=1
+azure_default_remember_me=true
+
+
+[profile Bainbridge]
+azure_tenant_id=<TENANT ID>
+azure_app_id_uri=<APP ID>
+azure_default_username=YOUR CDP EMAIL ADDRESS>
+azure_default_role_arn=CDPOne_FullAccess
+azure_default_duration_hours=1
+azure_default_remember_me=true
+#End CDP One config
+```
+---
+---
+
+###   Verify all is working:
+
+1. Request a `PIM` with `Full Access` -- choose SBFE for now.
+
+1.    Login from the terminal window
+
+  ```
+ #aws-azure-login --no-sandbox --profile <profile name value here>
+ 
+ export AWS_PROFILE=SBFE_sb250
+ export AWS_DEFAULT_REGION=us-east-1
+ export AWS_REGION=us-east-1
+
+ aws-azure-login --no-sandbox --profile SBFE_sb250
+  ```
+
+2.    It will prompt you for your Azure AD Password.
+
+3.    It will prompt you for a code from your 2-factor authentication device.
+
+4.    If all works without error, you can see that it creates a new file with credentials here:  
+ 		  `cat ~/.aws/credentials`
+
+5.    Test that it is working with a sample aws cli command:
+
+  ```
+ export AWS_PROFILE=SBFE_sb250
+ export AWS_DEFAULT_REGION=us-east-1
+ export AWS_REGION=us-east-1
+ 
+ aws s3 ls
+  ```
+6.   **Sample Output:**
+  
+  ```
+  2024-04-08 12:37:30 aws-athena-query-results-208226632548-us-east-1
+2022-11-03 15:14:32 cf-templates-1kwe6ecrr19x1-us-east-1
+2024-04-22 14:19:03 datadogintegration-forwarderstack--forwarderbucket-d008l9a3gziu
+2024-03-26 05:13:06 lacework-ct-bucket-b66b86f9
+2024-03-26 05:13:06 lacework-ct-bucket-b66b86f9-access-logs
+2022-11-03 15:17:19 laceworkcloudsecurity-laceworklogs-gxg2spjfyvy7
+2023-07-03 15:05:10 sb-251-cdp-private-etl-migration-svc
+2022-10-28 20:37:32 sb250-cdp-private-default-g9hzvc5
+2022-10-28 20:37:16 sb250-cdp-public-default-g9hzvc5
+2024-06-07 19:37:07 sb250-cloudtrail-generalpurpose
+2022-11-03 15:17:44 sb250-laceworkcws-547a
+2022-10-28 21:18:02 sb251-cdp-private-default-8x2hqpc
+2024-10-21 19:38:55 sb251-cdp-public-datalake-backup
+2022-10-28 21:17:45 sb251-cdp-public-default-8x2hqpc
+2024-10-21 20:00:34 sb251-datalake-public-backup-bucket-use2
+2022-12-22 16:16:33 sb252-cdp-private-default-3vbwqeh
+2022-12-22 16:16:25 sb252-cdp-public-default-3vbwqeh
+2023-12-29 17:28:58 terraform-airflow-sbfe
+2023-04-27 16:37:24 tfstate-208226632548
+  ```
+
 
 ### Test that data is being persisted to our PVC by deleting the POD
 
