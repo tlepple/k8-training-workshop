@@ -7,20 +7,29 @@ if [ -z "$1" ]; then
 fi
 
 NAMESPACE_CONFIG="$1"
+TEMPLATE_DIR="../templates/"
+OUTPUT_DIR="./output/"
 
-# Find all files in the current directory with the prefix "template"
-TEMPLATE_FILES=(template.*)
+# Create the output directory if it doesn't exist
+if [ ! -d "$OUTPUT_DIR" ]; then
+  echo "Creating output directory: $OUTPUT_DIR"
+  mkdir -p "$OUTPUT_DIR"
+fi
+
+# Find all template files in the specified directory
+TEMPLATE_FILES=("$TEMPLATE_DIR"template.*)
 
 # Ensure at least one template file is found
 if [ ${#TEMPLATE_FILES[@]} -eq 0 ]; then
-  echo "No template files found in the current directory."
+  echo "No template files found in $TEMPLATE_DIR."
   exit 1
 fi
 
 # Process each template file
 for TEMPLATE_FILE in "${TEMPLATE_FILES[@]}"; do
-  # Define the output file name by removing the "template." prefix
-  OUTPUT_FILE="${TEMPLATE_FILE#template.}"
+  # Extract the file name from the path and define the output file name
+  TEMPLATE_BASENAME=$(basename "$TEMPLATE_FILE")
+  OUTPUT_FILE="${OUTPUT_DIR}${TEMPLATE_BASENAME#template.}"
 
   echo "Generating $OUTPUT_FILE from $TEMPLATE_FILE..."
 
@@ -34,3 +43,4 @@ for TEMPLATE_FILE in "${TEMPLATE_FILES[@]}"; do
     exit 1
   fi
 done
+
