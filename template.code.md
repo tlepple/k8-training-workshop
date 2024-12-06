@@ -17,3 +17,11 @@ kubectl create namespace <YOUR NAMESPACE HERE>
 ```bash
 kubectl apply -f pvc.yaml --namespace=<YOUR NAMESPACE HERE>
 ```
+
+---
+
+### Create your `ecr-secret`
+
+```bash
+kubectl apply -f ecr-secret.yaml --namespace=<YOUR NAMESPACE HERE>
+```
