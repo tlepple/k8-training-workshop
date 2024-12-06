@@ -20,7 +20,7 @@ Tags:  Kubernetes | K8s | Docker | Ubuntu
 
 ### Create your `namespace`
 
-- Ensure you have setup your `define.yaml` file.  --> [How2Guide](https://nexuscognitive.atlassian.net/wiki/spaces/CDPSAASTeam/pages/208732161/K8s+-+How+to+Create+a+Service+Account+and+Credentials+to+access+EKS+Cluster)
+- Ensure you have setup your `define.yaml` file.  
 
 
 ```bash
