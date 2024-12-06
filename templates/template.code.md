@@ -141,7 +141,23 @@ azure_default_remember_me=true
      ```
 
 13.  **Exit the Container**: run the command `exit`
- 
+
+ ##  Docker Command Reference for Common Items:
+
+---
+
+
+| Command | Description |
+| ----------- | ----------- |
+| docker ps -a | list all containers on host |
+| docker container start aws-ad-auth | start an existing container |
+| docker container stop aws-ad-auth | stop a running container |
+| docker container rm aws-ad-auth | remove a docker container |
+| docker volume ls | list docker volumes |
+| docker volume rm awsadauth_vol | remove a docker volume |
+| docker image ls | list local docker images |
+| docker image rm `<image ID>` | remove a local image |
+
 ---
 ---
 
