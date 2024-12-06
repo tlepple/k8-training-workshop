@@ -7,7 +7,116 @@ Last Updated:  12.06.2024
 Comments:  This repo is intended to capture notes about using K8s and its supporting cast members in the K8 ecosystem.
 Tags:  Kubernetes | K8s | Docker | Ubuntu
 ---
+# Docker  - Hands On Exercise 
 
+### **Build the Docker Image** and give it a unique name.  `ubuntu:<YOUR NAMESPACE HERE>-azdevops-cdp-jammy-img`:
+
+1.  **Change to our working directory**
+    ```bash
+    cd ~/docker/compose/k8-training-workshop/output
+    ```
+2.  **Build the docker image**
+    ```bash
+    docker build -t amd64/ubuntu:<YOUR NAMESPACE HERE>-azdevops-cdp-jammy-img .
+    ```
+3.  **List docker images that are on this host**
+    ```bash
+    docker image ls
+    ```
+4.  **Create a docker volume for our new container to use**
+    ```bash
+    docker volume create <YOUR NAMESPACE HERE>-awsadauth_vol1
+    ```
+5.  **Create a docker container using our new image via `compose`**
+    ```bash
+    docker compose up -d
+    ```
+---
+
+## Let's test this image on this docker host to verify it worked.
+
+---
+
+1.  **Verify**:
+   - Connect to the running container and check `/app/pim` to ensure the Git repository has been cloned or updated as expected. This container does not run like most docker containers, it is operating more like a linux VM.   It will run continously until you shut it down.
+
+  ```
+docker exec -it aws-ad-auth bash
+  ```
+
+2.  Setup a local aws config file with profiles you have access to from Azure AD credentials
+
+ ```
+cd /app/pim
+az login 
+ ```
+
+ *  This will return output similar to this:
+
+ ```
+To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code <your specfic code>  to authenticate.
+ ```
+3.  Authenticate to Azure AD:   
+    1. Open a chrome browser on your host and give it the URL `https://microsoft.com/devicelogin`.   
+    2. It will ask you to enter the code from your container `<your specfic code>`.   
+    3. From here you will select your Microsoft AD account.  
+    4. Then click the `Continue` button from the next screen.
+    5. In the returned output choose `1` which should be associated with Tenant ` NX1-Cloudera-CDP-Operations`
+    
+      
+    
+4.  Extract from Azure AD account profiles you are authorized to access in preparation for next steps.
+
+ ```
+ cd /app/pim
+ python3 create_config.py
+ ```
+
+5.  Setup aws configuration files with Account Profiles gathered in previous step.
+
+ ```
+. update_config.sh
+ ```
+
+
+*  It will prompt you for some input.   Sample output here:
+
+ ```
+ Enter Azure AD Username: <input your cloudera-cdp.com email address here>
+ Enter AWS Session Role Name: <input your role name to include here> Example:  CDPOne_FullAccess
+ Updated configuration merged into ~/.aws/config successfully.
+  ```
+
+**Validate it worked with this command:** `cat ~/.aws/config`
+
+**Sample Output**:
+
+```
+[profile VictoriaUniversity_vu735]
+azure_tenant_id=655b1c57-e57f-413b-8c9d-7c2fd723604d
+azure_app_id_uri=888f2c05-7ff9-4e6f-a25b-79e86c7fc743
+azure_default_username=tlepple@cloudera-cdp.com
+azure_default_role_arn=CDPOne_FullAccess
+azure_default_duration_hours=1
+azure_default_remember_me=true
+
+[profile Moelis_me180]
+azure_tenant_id=655b1c57-e57f-413b-8c9d-7c2fd723604d
+azure_app_id_uri=26010477-b0d6-41eb-8ccd-02548c987a06
+azure_default_username=tlepple@cloudera-cdp.com
+azure_default_role_arn=CDPOne_FullAccess
+azure_default_duration_hours=1
+azure_default_remember_me=true
+```
+
+6.  **Exit the Container**: run the command `exit` 
+
+ 
+---
+---
+
+
+---
 
 # K8s - Hands On Exercise and Notes
 
