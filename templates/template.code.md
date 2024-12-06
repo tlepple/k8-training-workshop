@@ -8,11 +8,13 @@ Comments:  This repo is intended to capture notes about using K8s and its suppor
 Tags:  Kubernetes | K8s | Docker | Ubuntu
 ---
 
+
 # K8s - Hands On Exercise and Notes
 
 * The goal of this document is to capture details that mimic a current set of administration tasks that currently are run from a docker container and migrate this container to be run inside of Kubernetes.
 
 ---
+
 ---
 ---
 
