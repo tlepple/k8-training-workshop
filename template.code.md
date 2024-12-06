@@ -65,5 +65,5 @@ kubectl describe pod awsbuild-pod --namespace=<YOUR NAMESPACE HERE>
 ### Validate PVC is bound
 
 ```bash
-kubectl get pvc efs-claim-tim --namespace=<YOUR NAMESPACE HERE>
+kubectl get pvc efs-claim-<YOUR NAMESPACE HERE> --namespace=<YOUR NAMESPACE HERE>
 ```
