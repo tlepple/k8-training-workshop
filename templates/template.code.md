@@ -35,7 +35,7 @@ Tags:  Kubernetes | K8s | Docker | Ubuntu
 ---
 
 1.  **Verify**:
-   - Connect to the running container and check `/app/pim` to ensure the Git repository has been cloned or updated as expected. This container does not run like most docker containers, it is operating more like a linux VM.   It will run continously until you shut it down.
+   - Connect to the running container and check this directory exists`/app/pim` to ensure the Git repository has been cloned or updated as expected. This container does not run like most docker containers, it is operating more like a linux VM.   It will run continously until you shut it down.
 
   ```
 docker exec -it <YOUR NAMESPACE HERE>-aws-ad-auth bash
