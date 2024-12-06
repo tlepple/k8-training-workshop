@@ -45,6 +45,13 @@ kubectl apply -f pod.yaml --namespace=<YOUR NAMESPACE HERE>
 
 ---
 
+### Connect into your new pod POD 
+
+```bash
+kubectl exec -it awsbuild-pod --namespace=<YOUR NAMESPACE HERE> -- /bin/bash
+```
+---
+
 ### List your new POD 
 
 ```bash
