@@ -25,3 +25,12 @@ kubectl apply -f pvc.yaml --namespace=<YOUR NAMESPACE HERE>
 ```bash
 kubectl apply -f ecr-secret.yaml --namespace=<YOUR NAMESPACE HERE>
 ```
+
+
+---
+
+### Create your `azure-repo-secret`
+
+```bash
+kubectl apply -f az_secrets.yaml --namespace=<YOUR NAMESPACE HERE>
+```
