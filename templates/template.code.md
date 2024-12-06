@@ -135,3 +135,54 @@ azure_default_remember_me=true
 
 **Note:** This section demonstrated that our PVC has retained the the data from earlier.
 
+---
+---
+
+## **Internal Notes**
+
+ - still trying to workout firewall issues in AWS for `nx1poc`.   all works within `rapid`
+
+---
+---
+
+
+
+
+
+# Useful `kubectl` commands
+
+---
+
+
+| Command | Description |
+| ----------- | ----------- |
+| kubectl get namespace | List all the namespaces |
+| kubectl create namespace `<namespace>` | Create a namespace |
+| kubectl -n `<namespace>` get pods | List all pods in a namespace. |
+| kubectl -n `<namespace>` logs `<pod-name>` | View logs for a specific pod. |
+| kubectl -n `<namespace>` describe pod `<pod-name>` | Detailed pod information. |
+| kubectl -n `<namespace>` exec -it `<pod-name>` | connect into a pod. |
+| kubectl -n `<namespace>` get events -n `<namespace>` | View events for troubleshooting. |
+| kubectl -n `<namespace>` rollout restart `<deploy>` | Restart a deployment. |
+| kubectl -n `<namespace>` delete pod `<pod_name>` | Delete a pod |
+| kubectl delete ns `<namespace>` | Delete a namespace |
+| kubectl get pv | List Persistent Volumes |
+| kubectl get pvc | List Persistent Volume Claims|
+| kubectl get sc | Listing Storage Classes |
+| kubectl get sc `<storage class name>` -o yaml | examine a specific storage class 'efs-sc' and write out the yaml |
+| kubectl apply --dry-run=client -f `<yaml filename>` | Test that the yaml is configured correctly |
+| kubectl -n `<namespace>` apply -f `<yaml filename>` | Apply configured yaml file to create K8 object |
+| kubectl -n `<namespace>`> get secrets| List the names of Secrets |
+| kubectl get serviceaccounts --all-namespaces | List Service Accounts |
+| kubectl get rolebinding,clusterrolebinding -n `<namespace>` | grep admin-user | Find service accounts with admin privs |
+
+
+
+
+---
+
+
+
+---
+---
+
