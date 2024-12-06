@@ -115,18 +115,18 @@ cat ~/.aws/config
 
 ```text
 [profile cazenapoc]
-azure_tenant_id=655b1c57-e57f-413b-8c9d-7c2fd723604d
-azure_app_id_uri=9a60d808-b1be-44ef-87c1-5798a9412080
-azure_default_username=tlepple@cloudera-cdp.com
+azure_tenant_id=<TENANT ID>
+azure_app_id_uri=<APP ID>
+azure_default_username=<YOUR CDP EMAIL ADDRESS>
 azure_default_role_arn=CDPOne_FullAccess
 azure_default_duration_hours=1
 azure_default_remember_me=true
 
 
 [profile Bainbridge]
-azure_tenant_id=655b1c57-e57f-413b-8c9d-7c2fd723604d
-azure_app_id_uri=d5bf9193-7b32-4e05-b9f0-ccf6ba857d90
-azure_default_username=tlepple@cloudera-cdp.com
+azure_tenant_id=<TENANT ID>
+azure_app_id_uri=<APP ID>
+azure_default_username=YOUR CDP EMAIL ADDRESS>
 azure_default_role_arn=CDPOne_FullAccess
 azure_default_duration_hours=1
 azure_default_remember_me=true
