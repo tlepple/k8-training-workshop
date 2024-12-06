@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: awsbuild-pod
-  namespace: tim
+  namespace: <YOUR NAMESPACE HERE>
 spec:
   initContainers:
     - name: git-clone-init
