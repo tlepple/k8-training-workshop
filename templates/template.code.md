@@ -86,6 +86,7 @@ kubectl get pvc efs-claim-<YOUR NAMESPACE HERE> --namespace=<YOUR NAMESPACE HERE
 ```
 
 
+
 ---
 
 # add the validate code here
@@ -227,16 +228,14 @@ azure_default_remember_me=true
   ```
 
 
-### Test that data is being persisted to our PVC by deleting the POD
-
-```bash
-kubectl get pvc efs-claim-<YOUR NAMESPACE HERE> --namespace=<YOUR NAMESPACE HERE>
-```
 
 
 **Exit the container from k8s:** `exit`
 
 **Run from your desktop:**
+
+
+### Test that data is being persisted to our PVC by deleting the POD
 
 ```bash
 kubectl delete pod awsbuild-pod --namespace=<YOUR NAMESPACE HERE>
@@ -287,18 +286,6 @@ azure_default_remember_me=true
 ---
 ---
 
-## **Internal Notes**
-
- - still trying to workout firewall issues in AWS for `nx1poc`.   all works within `rapid`
-
----
----
-
-
-
-
-
-# Useful `kubectl` commands
 
 ---
 
