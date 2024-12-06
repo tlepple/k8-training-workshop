@@ -122,7 +122,7 @@ azure_default_remember_me=true
 9.  If all works without error, you can see that it creates a new file with credentials here:
     `cat ~/.aws/credentials`
 
-10.  Test that it is working with a sample aws cli command:
+10.  Test that it is working with a sample aws cli command to list the bucket names in `S3`:
      ```bash
      export AWS_PROFILE=SBFE_sb250
      export AWS_DEFAULT_REGION=us-east-1
