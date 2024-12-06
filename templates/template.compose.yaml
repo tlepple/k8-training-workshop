@@ -2,11 +2,11 @@ version: '3.8'
 
 services:
   awsbuild:
-    image: amd64/ubuntu:azdevops-cdp-jammy-img
-    container_name: aws-ad-auth
+    image: amd64/ubuntu:<YOUR NAMESPACE HERE>-azdevops-cdp-jammy-img
+    container_name: <YOUR NAMESPACE HERE>-aws-ad-auth
     volumes:
       - type: volume
-        source: awsadauth_vol1
+        source: <YOUR NAMESPACE HERE>-awsadauth_vol1
         target: /app
     command: ["tail", "-f", "/dev/null"]
 
