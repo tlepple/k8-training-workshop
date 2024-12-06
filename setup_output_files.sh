@@ -7,7 +7,7 @@ if [ -z "$1" ]; then
 fi
 
 NAMESPACE_CONFIG="$1"
-TEMPLATE_DIR="../templates/"
+TEMPLATE_DIR="./templates/"
 OUTPUT_DIR="./output/"
 
 # Create the output directory if it doesn't exist
