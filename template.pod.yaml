@@ -65,4 +65,4 @@ spec:
       emptyDir: {}  # Temporary volume to store cloned files
     - name: awsbuild-storage
       persistentVolumeClaim:
-        claimName: efs-claim-tim
+        claimName: efs-claim-<YOUR NAMESPACE HERE>
