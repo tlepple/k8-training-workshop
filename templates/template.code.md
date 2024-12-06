@@ -232,8 +232,12 @@ azure_default_remember_me=true
 
 **Exit the container from k8s:** `exit`
 
-**Run from your desktop:**
+---
+---
 
+
+---
+---
 
 ### Test that data is being persisted to our PVC by deleting the POD
 
