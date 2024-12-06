@@ -11,3 +11,9 @@ kubectl create namespace <YOUR NAMESPACE HERE>
 ```
 
 ---
+
+### Create your `Persistent Volume Claim`
+
+```bash
+kubectl apply -f pvc.yaml --namespace=<YOUR NAMESPACE HERE>
+```
