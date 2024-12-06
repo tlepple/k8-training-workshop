@@ -1,5 +1,3 @@
-
-
 ---
 Title:  Learning Kubernetes and supporting tools.
 Author:  Tim Lepple
@@ -41,7 +39,7 @@ Tags:  Kubernetes | K8s | Docker | Ubuntu
    - Connect to the running container and check `/app/pim` to ensure the Git repository has been cloned or updated as expected. This container does not run like most docker containers, it is operating more like a linux VM.   It will run continously until you shut it down.
 
   ```
-docker exec -it aws-ad-auth bash
+docker exec -it <YOUR NAMESPACE HERE>-aws-ad-auth bash
   ```
 
 2.  Setup a local aws config file with profiles you have access to from Azure AD credentials
@@ -93,17 +91,17 @@ To sign in, use a web browser to open the page https://microsoft.com/devicelogin
 
 ```
 [profile VictoriaUniversity_vu735]
-azure_tenant_id=655b1c57-e57f-413b-8c9d-7c2fd723604d
-azure_app_id_uri=888f2c05-7ff9-4e6f-a25b-79e86c7fc743
-azure_default_username=tlepple@cloudera-cdp.com
+azure_tenant_id=<sample tenant id>
+azure_app_id_uri=<sample app id>
+azure_default_username=<your email address>
 azure_default_role_arn=CDPOne_FullAccess
 azure_default_duration_hours=1
 azure_default_remember_me=true
 
 [profile Moelis_me180]
-azure_tenant_id=655b1c57-e57f-413b-8c9d-7c2fd723604d
-azure_app_id_uri=26010477-b0d6-41eb-8ccd-02548c987a06
-azure_default_username=tlepple@cloudera-cdp.com
+azure_tenant_id=<sample tenant id>
+azure_app_id_uri=<sample app id>
+azure_default_username=<your email address>
 azure_default_role_arn=CDPOne_FullAccess
 azure_default_duration_hours=1
 azure_default_remember_me=true
