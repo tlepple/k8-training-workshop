@@ -52,7 +52,7 @@ kubectl exec -it awsbuild-pod --namespace=<YOUR NAMESPACE HERE> -- /bin/bash
 ```
 ---
 
-### List your new POD 
+### List your PODs
 
 ```bash
 kubectl get pods --namespace=<YOUR NAMESPACE HERE>
