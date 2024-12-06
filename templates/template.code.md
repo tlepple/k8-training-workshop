@@ -106,7 +106,7 @@ azure_default_duration_hours=1
 azure_default_remember_me=true
 ```
 
-6.  **Set a IAM profile from within this new container** We will use an `SBFE Profile`
+6.  **Set a IAM profile from within this new container.**  - We will use an `SBFE Profile`
     ```bash
     export AWS_PROFILE=SBFE_sb250
     export AWS_DEFAULT_REGION=us-east-1
