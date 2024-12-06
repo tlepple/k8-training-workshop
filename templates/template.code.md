@@ -106,8 +106,41 @@ azure_default_duration_hours=1
 azure_default_remember_me=true
 ```
 
-6.  **Exit the Container**: run the command `exit` 
+6.  **Set a IAM profile from within this new container** We will use an `SBFE Profile`
+    ```bash
+    export AWS_PROFILE=SBFE_sb250
+    export AWS_DEFAULT_REGION=us-east-1
+    export AWS_REGION=us-east-1
 
+    aws-azure-login --no-sandbox --profile SBFE_sb250
+    ```
+
+7.  It will prompt you for your Azure AD Password
+
+8.  It will prompt you for a code from you 2-factor authentication device
+
+9.  If all works without error, you can see that it creates a new file with credentials here:
+    `cat ~/.aws/credentials`
+
+10.  Test that it is working with a sample aws cli command:
+     ```bash
+     export AWS_PROFILE=SBFE_sb250
+     export AWS_DEFAULT_REGION=us-east-1
+     export AWS_REGION=us-east-1
+
+     aws s3 ls
+     ```
+11.  **Sample Output:**
+
+    ```bash
+    2024-04-08 12:37:30 aws-athena-query-results-208226632548-us-east-1
+    2022-11-03 15:14:32 cf-templates-1kwe6ecrr19x1-us-east-1
+    2024-04-22 14:19:03 datadogintegration-forwarderstack--forwarderbucket-d008l9a3gziu
+    2024-03-26 05:13:06 lacework-ct-bucket-b66b86f9
+    2024-03-26 05:13:06 lacework-ct-bucket-b66b86f9-access-logs
+     ```
+
+13.  **Exit the Container**: run the command `exit`
  
 ---
 ---
