@@ -246,14 +246,10 @@ kubectl get pvc efs-claim-<YOUR NAMESPACE HERE> --namespace=<YOUR NAMESPACE HERE
 
 
 ---
-
-# add the validate code here
-
-
 ---
 ## **Test that the POD works as expected**
 
-### Connect into your new pod POD 
+### Connect into your new POD 
 
 ```bash
 kubectl exec -it awsbuild-pod --namespace=<YOUR NAMESPACE HERE> -- /bin/bash
@@ -329,15 +325,11 @@ azure_default_remember_me=true
 ---
 ---
 
-###   Verify all is working:
+###   Verify we can use this pod like we did in docker container earlier:
 
-1. Request a `PIM` with `Full Access` -- choose SBFE for now.
+1.   **Configure components for IAM Profiles:**
 
-1.    Login from the terminal window
-
-  ```
- #aws-azure-login --no-sandbox --profile <profile name value here>
- 
+  ```bash
  export AWS_PROFILE=SBFE_sb250
  export AWS_DEFAULT_REGION=us-east-1
  export AWS_REGION=us-east-1
@@ -389,10 +381,6 @@ azure_default_remember_me=true
 
 
 **Exit the container from k8s:** `exit`
-
----
----
-
 
 ---
 ---
