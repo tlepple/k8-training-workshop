@@ -10,7 +10,7 @@ Tags:  Kubernetes | K8s | Docker | Ubuntu
 
 1.  **Change to our working directory**
     ```bash
-    cd ~/docker/compose/k8-training-workshop/output
+    cd ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/output
     ```
 2.  **Build the docker image**
     ```bash
