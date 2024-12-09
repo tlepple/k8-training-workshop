@@ -28,8 +28,8 @@ A user needs to create their own PAT for secure authentication when accessing `N
 ##### Connect into OPS Docker Server
 
 1. **SSH into the host** `ssh tlepple@ops-docker.cloudera-cdp.com`
-2. **Create a directory** for assets used in this training `mkdir -p ~/docker/compose<your user nere>`
-3. **Change to this new directory** `cd ~/docker/compose`
+2. **Create a directory** for assets used in this training `mkdir -p ~/docker/compose/<YOUR NAMESPACE HERE>`
+3. **Change to this new directory** `cd ~/docker/compose/<YOUR NAMESPACE HERE>`
 4. **Clone Repo with Training Materials** 
 	
 	```
