@@ -44,3 +44,23 @@ A user needs to create their own PAT for secure authentication when accessing `N
 
 ---
 
+# **Configure Azure CLI connection** from Docker server.
+
+ ```
+cd ~
+az login 
+ ```
+
+ *  This will return output similar to this:
+
+ ```
+To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code <your specfic code>  to authenticate.
+ ```
+6.  Authenticate to Azure AD:   
+    1. Open a chrome browser on your host and give it the URL `https://microsoft.com/devicelogin`.   
+    2. It will ask you to enter the code from your container `<your specfic code>`.   
+    3. From here you will select your Microsoft AD account.  
+    4. Then click the `Continue` button from the next screen.
+    5. In the returned output choose `1` which should be associated with Tenant ` NX1-Cloudera-CDP-Operations`
+    
+
