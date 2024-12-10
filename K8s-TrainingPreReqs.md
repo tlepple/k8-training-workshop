@@ -34,10 +34,15 @@ A user needs to create their own PAT for secure authentication when accessing `N
 	
 	```
 	git clone https://github.com/tlepple/k8-training-workshop.git
-	```   
-5. **Update the code with some personal credentials**	
+        ```
+
+5. **Change to our new directory**	
 	```
-	<code to execute script goes here>
+	cd ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop
+	```
+6. **Update the code with some personal credentials**	
+	```
+	. ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/setup_output_files.sh <YOUR NAMESPACE HERE>
 	```
 
 ---
