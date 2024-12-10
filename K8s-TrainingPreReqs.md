@@ -63,7 +63,7 @@ To sign in, use a web browser to open the page https://microsoft.com/devicelogin
     4. Then click the `Continue` button from the next screen.
     5. In the returned output choose `1` which should be associated with Tenant `NexusCognitive`
 
-8.  **Configure azure ad cli to use our Projects Folder in Azure AD**
+8.  **Configure `azure ad cli` to use our Projects Folder in Azure AD**
 
    ```bash
    az devops configure --defaults organization=https://dev.azure.com/Nexus-One project="NX1 Special Projects"
