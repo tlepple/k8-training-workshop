@@ -31,10 +31,7 @@ A user needs to create their own PAT for secure authentication when accessing `N
 2. **Create a directory** for assets used in this training `mkdir -p ~/docker/compose/<YOUR NAMESPACE HERE>`
 3. **Change to this new directory** `cd ~/docker/compose/<YOUR NAMESPACE HERE>`
 4. **Clone Repo with Training Materials** 
-	
-	```
-	git clone https://github.com/tlepple/k8-training-workshop.git
-        ```
+	```git clone https://github.com/tlepple/k8-training-workshop.git```
 
 5. **Change to our new directory**	
 	```
