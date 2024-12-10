@@ -58,8 +58,8 @@ To sign in, use a web browser to open the page https://microsoft.com/devicelogin
  ```
 7.  Authenticate to Azure AD:   
     1. Open a chrome browser on your host and give it the URL `https://microsoft.com/devicelogin`.   
-    2. It will ask you to enter the code from your container `<your specfic code>`.   
-    3. From here you will select your Microsoft AD `Nexus-One` account.  Example: `<your nexus one email address>`
+    2. It will ask you to enter the code: `<your specfic code>`.   
+    3. From here you will select your Microsoft AD `Nexus-One` email account.  Example: `<your nexus one email address>`
     4. Then click the `Continue` button from the next screen.
     5. In the returned output choose `1` which should be associated with Tenant `NexusCognitive`
 
