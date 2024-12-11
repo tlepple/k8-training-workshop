@@ -171,6 +171,10 @@ azure_default_remember_me=true
 ---
 ---
 
+# Add steps here to push this new image to ECR
+
+# Add steps here to get your ECR PAT here.
+
 # K8s - Hands On Exercises
 
 ---
