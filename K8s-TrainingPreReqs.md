@@ -136,4 +136,4 @@ git push -u origin main
 ```
 20.  **This will prompt you for a password, give it your Azure DevOps PAT we set earlier:**
 
-21.  **Open Azure DevOps** in your browser and navigate to `URL Here`
+21.  **Open Azure DevOps** in your browser and navigate to `https://dev.azure.com/Nexus-One/NX1%20Special%20Projects/_git/<YOUR NAMESPACE HERE>-k8-training-workshop?path=/code.md&_a=preview`
