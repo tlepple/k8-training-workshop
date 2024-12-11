@@ -44,3 +44,8 @@ for TEMPLATE_FILE in "${TEMPLATE_FILES[@]}"; do
   fi
 done
 
+
+#  add the git config and push code here:
+
+
+
