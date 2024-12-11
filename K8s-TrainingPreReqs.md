@@ -47,14 +47,14 @@ A user needs to create their own PAT for secure authentication when accessing `N
 	. ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/setup_output_files.sh <YOUR NAMESPACE HERE>
 	```
 8.  Update a script with your Azure DevOps credentials
-        ```bash
-        vi ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/output/entrypoint.sh
-        ```
-        - Replace these variables with your credentials:
-            ```bash
-            AZ_USERNAME="<YOUR-USERNAME-HERE>"
-            AZURE_PAT="<YOUR-PAT-HERE>"
-            ```
+```bash
+vi ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/output/entrypoint.sh
+```
+  - Replace these variables with your credentials:
+   ```bash
+    AZ_USERNAME="<YOUR-USERNAME-HERE>"
+    AZURE_PAT="<YOUR-PAT-HERE>"
+   ```
 ---
 
 # **Configure Azure CLI connection** from Docker server.
