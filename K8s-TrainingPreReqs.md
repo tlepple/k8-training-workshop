@@ -6,6 +6,7 @@ A user needs to create their own PAT for secure authentication when accessing `N
 2. **Navigate to the Repos and find the repo --> `aws_ad_auth` and choose the 3 elipses to the right of the name and choose `Clone`**:
    - This will pop-up a new window called `Clone Repository`.  Click the `Generate Git Credentials` button.
    - Save the `Username` and `Password` to a file.  The token is displayed only once. The user should copy it immediately and store it securely (e.g., in a password manager).  [RepoLink-aws-ad-auth](https://dev.azure.com/Nexus-One/NX1%20Special%20Projects/_git/aws_ad_auth)
+   - This credential will be used multiple times in this exercise
  
 
 ---
