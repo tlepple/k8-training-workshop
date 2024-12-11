@@ -117,11 +117,19 @@ git branch
 ```bash
 * main
 ```
-
-17.  **Push these items into our new repo:**
+17.  **Set our remote branch stuff:**
+```bash
+git remote add origin https://Nexus-One@dev.azure.com/Nexus-One/NX1%20Special%20Projects/_git/<YOUR NAMESPACE HERE>-k8-training-workshop
+```
+18. **Validate the remote url:**
+    ```bash
+    git remote -v
+    ```
+     
+19.  **Push these items into our new repo:**
 ```bash
 git push -u origin main
 ```
-18.  **This will prompt you for a password, give it your Azure DevOps PAT we set earlier:**
+20.  **This will prompt you for a password, give it your Azure DevOps PAT we set earlier:**
 
-19.  **Open Azure DevOps** in your browser and navigate to `URL Here`
+21.  **Open Azure DevOps** in your browser and navigate to `URL Here`
