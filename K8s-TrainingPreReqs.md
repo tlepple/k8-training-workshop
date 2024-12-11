@@ -122,4 +122,4 @@ git push -u origin main
 ```
 18.  **This will prompt you for a password, give it your Azure DevOps PAT we set earlier:**
 
-19.  **Open Azure DevOps in your browser and navigate to `URL Here`
+19.  **Open Azure DevOps** in your browser and navigate to `URL Here`
