@@ -85,7 +85,7 @@ git credential-cache exit
 git config --global credential.helper manager-core
 
 git config --global user.name "<YOUR NEXUS USERNAME>"
-git config --global user.email <YOUR NEXUS USERNAME EMAIL ADDRESS>
+git config --global user.email <YOUR NEXUS EMAIL ADDRESS>
 ```
 11.  **Validate your username is set correctly**
 ```bash
