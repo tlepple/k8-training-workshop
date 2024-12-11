@@ -169,7 +169,7 @@ azure_default_remember_me=true
 #### Create a `Elastic Container Registry` Repo
 1.  **Obtain a PIM** to AWS Operations `CDPOne-AWS Operations Full`
 2.  **Open your browser** and navigate to `myapps.microsoft.com` and find the tile `AWS Console - Nexus One Operations`
-3.  **In the AWS GUI**, navigate to ECR and create a repo if it doesn't exist called `msp_ops/azdevops-cdp-jammy-img`.  
+3.  **In the AWS GUI**, navigate to ECR and create a repo if it doesn't exist called `msp_ops/<YOUR NAMESPACE HERE>-azdevops-cdp-jammy-img`.  
     - make sure that it is set to `mutable` and the encryption setting is set to `AES-256`
 4.  **Open `CloudShell`** at the footer on this page to obtain a temporary token.
     - **Note:** These tokens are only good for 12 hours
