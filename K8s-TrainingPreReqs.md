@@ -70,4 +70,6 @@ To sign in, use a web browser to open the page https://microsoft.com/devicelogin
    az devops configure --defaults organization=https://dev.azure.com/Nexus-One project="NX1 Special Projects"
    ```
 
+---
 
+9.  #  Add steps here for the git create and push of personalized code.md here
