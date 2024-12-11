@@ -72,11 +72,11 @@ To sign in, use a web browser to open the page https://microsoft.com/devicelogin
 
 ---
 
-9.  ## **Create a new repo in Azure DevOps for this project:**
+9.  **Create a new repo in Azure DevOps for this project:**
 ```bash
 az repos create --name <YOUR NAMESPACE HERE>-k8-training-workshop
 ```
-10.  ## **Configure Git CLI tools**
+10.  **Configure Git CLI tools**
 ```bash
 
 cd ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/output
@@ -87,39 +87,39 @@ git config --global credential.helper manager-core
 git config --global user.name "<YOUR NEXUS USERNAME>"
 git config --global user.email <YOUR NEXUS USERNAME EMAIL ADDRESS>
 ```
-11.  ## **Validate your username is set correctly**
+11.  **Validate your username is set correctly**
 ```bash
 git config --get credential.helper
 ```
 
-12.  ### **Expected Output:**
+12.  **Expected Output:**
 ```bash
 <YOUR NEXUS USERNAME>
 ```
-13.  ### **Setup our local repo that will push to remote repo:**
+13.  **Setup our local repo that will push to remote repo:**
 ```bash
 git init
 git branch -M main
 ```
-14.  ### **Validate the branch is set:**
+14.  **Validate the branch is set:**
 ```bash
 git branch
 ```
 
-15.  ### **Expected Output:**
+15.  **Expected Output:**
 ```bash
 * main
 ```
 
-16.  ### **Add and push items to our new repo:**
+16.  **Add and push items to our new repo:**
 ```bash
 git add *.md
 git commit -m "Initial commit markdown docs"
 ```
-17.  ### **Push these items into our new repo:**
+17.  **Push these items into our new repo:**
 ```bash
 git push -u origin main
 ```
-18.  #### **This will prompt you for a password, give it your Azure DevOps PAT we set earlier:**
+18.  **This will prompt you for a password, give it your Azure DevOps PAT we set earlier:**
 
-19.  ### **Open Azure DevOps in your browser and navigate to `URL Here`
+19.  **Open Azure DevOps in your browser and navigate to `URL Here`
