@@ -161,6 +161,74 @@ azure_default_remember_me=true
 ---
 ---
 
+
+## Build and push this Image to the `NexusOne` AWS `Elastic Container Registry` -  ECR
+* We will publish the local docker image into a private Elastic Container Registry.
+
+
+#### Create a `Elastic Container Registry` Repo
+1.  **Obtain a PIM** to AWS Operations `CDPOne-AWS Operations Full`
+2.  **Open your browser** and navigate to `myapps.microsoft.com` and find the tile `AWS Console - Nexus One Operations`
+3.  **In the AWS GUI**, navigate to ECR and create a repo if it doesn't exist called `msp_ops/azdevops-cdp-jammy-img`.  
+    - make sure that it is set to `mutable` and the encryption setting is set to `AES-256`
+4.  **Open `CloudShell`** at the footer on this page to obtain a temporary token.
+    - **Note:** These tokens are only good for 12 hours
+5.  From within `CloudShell` run the command:  `aws ecr get-login-password --region us-east-1` to get a PAT
+6.  **Copy this token** to your desktop.  It will be used to build our image from the docker host server.
+7.  **Configure the docker client** from terminal on the docker server with our new token:
+    - Export our token to a variable:
+    
+    ```
+    export TEMP_ECR_TOKEN=<Token Value from above step>
+    
+    docker login --username AWS --password $TEMP_ECR_TOKEN 410778887951.dkr.ecr.us-east-1.amazonaws.com
+    ```
+8.  **Build our container image** - From a terminal session on the Docker Server we will build our image with this command:
+    `docker build -t msp_ops/<YOUR NAMESPACE HERE>-azdevops-cdp-jammy-img .`
+9.  **Tag our image:**  `docker tag msp_ops/<YOUR NAMESPACE HERE>-azdevops-cdp-jammy-img:latest 410778887951.dkr.ecr.us-east-1.amazonaws.com/msp_ops/azdevops-cdp-jammy-img:latest`
+10. **Push our new image** to the AWS Elastic Container Registry Repo: `docker push 410778887951.dkr.ecr.us-east-1.amazonaws.com/msp_ops/<YOUR NAMESPACE HERE>-azdevops-cdp-jammy-img:latest`    
+    
+11.  **List our images** with: `docker image ls`
+
+   ```
+REPOSITORY                                                                    TAG                      IMAGE ID       CREATED          SIZE
+410778887951.dkr.ecr.us-east-1.amazonaws.com/msp_ops/azdevops-cdp-jammy-img   latest                   7968bf77f737   26 minutes ago   2.73GB
+amd64/ubuntu                                                                  azdevops-cdp-jammy-img   7968bf77f737   26 minutes ago   2.73GB
+msp_ops/azdevops-cdp-jammy-img                                                latest                   7968bf77f737   26 minutes ago   2.73GB
+ghcr.io/tlepple/cml-odbc-tim3                                                 v3                       e3941e10816b   7 days ago       1.31GB
+amd64/ubuntu                                                                  tim-cdp-jammy-img        21bf171acb5c   12 days ago      2.74GB
+ghcr.io/tlepple/aws-auth-img-tim                                              v2                       21bf171acb5c   12 days ago      2.74GB
+greenbone/gvmd                                                                latest                   9e9953ec7225   5 weeks ago      583MB
+registry.community.greenbone.net/community/report-formats                     latest                   452f9bd7b326   2 months ago     5.31MB
+registry.community.greenbone.net/community/vulnerability-tests                latest                   fbf9786a00a2   2 months ago     963MB
+registry.community.greenbone.net/community/scap-data                          latest                   5b434c2d76a8   2 months ago     97.3MB
+registry.community.greenbone.net/community/data-objects                       latest                   bc04a984501c   2 months ago     24.5MB
+registry.community.greenbone.net/community/notus-data                         latest                   04cfd15e43e6   2 months ago     27.3MB
+registry.community.greenbone.net/community/cert-bund-data                     latest                   2c40273dff0e   2 months ago     86.6MB
+registry.community.greenbone.net/community/dfn-cert-data                      latest                   d7e4501e568d   2 months ago     48.6MB
+registry.community.greenbone.net/community/pg-gvm                             stable                   b529017bdb78   2 months ago     437MB
+registry.community.greenbone.net/community/gsa                                stable                   e5e47d07ca1b   2 months ago     150MB
+registry.community.greenbone.net/community/gvmd                               stable                   547b74eab848   2 months ago     586MB
+registry.community.greenbone.net/community/openvas-scanner                    stable                   75ca6c04ffc7   2 months ago     340MB
+registry.community.greenbone.net/community/gpg-data                           latest                   6fea81699330   2 months ago     4.27MB
+registry.community.greenbone.net/community/redis-server                       latest                   1ef7b77fbf0e   2 months ago     125MB
+registry.community.greenbone.net/community/ospd-openvas                       stable                   c72f373290ba   2 months ago     725MB
+registry.community.greenbone.net/community/gvm-tools                          latest                   28ddce3c38d8   2 months ago     180MB
+lscr.io/linuxserver/syslog-ng                                                 latest                   cf6365d37bf8   2 months ago     79.4MB
+guacamole/guacd                                                               latest                   4cbd688f90f1   6 months ago     242MB
+guacamole/guacamole                                                           latest                   08bca69ecd72   6 months ago     511MB
+registry.rocket.chat/rocketchat/rocket.chat                                   latest                   b480f595fba5   8 months ago     1.58GB
+bitnami/mongodb                                                               5.0                      9d7f29f45afa   9 months ago     590MB
+mikesplain/openvas                                                            latest                   889967897c49   5 years ago      6.39GB
+   ```
+   
+12. **Container Image has been pushed to AWS ECR**
+
+
+---
+---
+
+
 # End of Docker Stuff
 
 ---
