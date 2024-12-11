@@ -185,7 +185,7 @@ azure_default_remember_me=true
     ```
 8.  **Build our container image** - From a terminal session on the Docker Server we will build our image with this command:
     `docker build -t msp_ops/<YOUR NAMESPACE HERE>-azdevops-cdp-jammy-img .`
-9.  **Tag our image:**  `docker tag msp_ops/<YOUR NAMESPACE HERE>-azdevops-cdp-jammy-img:latest 410778887951.dkr.ecr.us-east-1.amazonaws.com/msp_ops/azdevops-cdp-jammy-img:latest`
+9.  **Tag our image:**  `docker tag msp_ops/<YOUR NAMESPACE HERE>-azdevops-cdp-jammy-img:latest 410778887951.dkr.ecr.us-east-1.amazonaws.com/msp_ops/<YOUR NAMESPACE HERE>-azdevops-cdp-jammy-img:latest`
 10. **Push our new image** to the AWS Elastic Container Registry Repo: `docker push 410778887951.dkr.ecr.us-east-1.amazonaws.com/msp_ops/<YOUR NAMESPACE HERE>-azdevops-cdp-jammy-img:latest`    
     
 11.  **List our images** with: `docker image ls`
