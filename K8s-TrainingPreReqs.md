@@ -99,7 +99,7 @@ git config --get credential.helper
 13.  **Setup our local repo that will push to remote repo:**
 ```bash
 git init
-git branch -M main
+git branch -m main
 ```
 14.  **Validate the branch is set:**
 ```bash
