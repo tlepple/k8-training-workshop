@@ -101,21 +101,23 @@ git config --get credential.helper
 git init
 git branch -m main
 ```
-14.  **Validate the branch is set:**
-```bash
-git branch
-```
 
-15.  **Expected Output:**
-```bash
-* main
-```
-
-16.  **Add and push items to our new repo:**
+14.  **Add and push items to our new repo:**
 ```bash
 git add *.md
 git commit -m "Initial commit markdown docs"
 ```
+
+15.  **Validate the branch is set:**
+```bash
+git branch
+```
+
+16.  **Expected Output:**
+```bash
+* main
+```
+
 17.  **Push these items into our new repo:**
 ```bash
 git push -u origin main
