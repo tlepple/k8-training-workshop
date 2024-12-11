@@ -39,9 +39,9 @@ A user needs to create their own PAT for secure authentication when accessing `N
 	cd ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop
 	```
 6.  **Make the script executable:**
-        ```
-    chmod 0700 ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/setup_output_files.sh
-	```
+```
+chmod 0700 ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/setup_output_files.sh
+```
 7. **Execute Script** - This will date the code tailored to you for the rest of the workshop.
 	```
 	. ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/setup_output_files.sh <YOUR NAMESPACE HERE>
