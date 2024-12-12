@@ -46,14 +46,24 @@ chmod 0700 ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/setup_out
 	```
 	. ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/setup_output_files.sh <YOUR NAMESPACE HERE>
 	```
-8.  Update a script with your Azure DevOps PAT credentials
-```bash
-vi ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/output/entrypoint.sh
-```
-  - Replace these variables with your credentials that were setup earlier:
+8.  Update a few files with your Azure DevOps PAT credentials
+   - Replace these variables with your credentials that were setup earlier:
    ```bash
-    AZ_USERNAME="<YOUR-USERNAME-HERE>"
-    AZURE_PAT="<YOUR-PAT-HERE>"
+    export AZ_USERNAME="<YOUR-USERNAME-HERE>"
+    export AZURE_PAT="<YOUR-PAT-HERE>"
+
+   
+    cd ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/output
+    sed -i "s|<YOUR-USERNAME-HERE>|$AZ_USERNAME|g" entrypoint.sh
+    sed -i "s|<YOUR-PAT-HERE>|$AZURE_PAT|g" entrypoint.sh
+
+    export BASE64_USERNAME=$(echo -n '$AZ_USERNAME' | base64 -w 0)
+    export BASE64_AZ_PAT=$(echo -n '$AZURE_PAT' | base64 -w 0)
+
+
+    cd ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/output
+    sed -i "s|<BASE64_ENCODED_USERNAME>|$BASE64_USERNAME|g" az_secrets.yaml
+    sed -i "s|<BASE64_ENCODED_PAT>|$BASE64_USERNAME|g" az_secrets.yaml
    ```
 ---
 
