@@ -256,7 +256,13 @@ mikesplain/openvas                                                            la
 
 ---
 ---
+## Configure your `nx1_define.yaml` on your desktop PC
+   - I will provide you with this file:
 
+**Export out this config:**
+```bash
+export KUBECONFIG=/path/2/your/nx1_define.yaml
+```
 ### Create your `namespace`
 
 - Ensure you have setup your `define.yaml` file.  
