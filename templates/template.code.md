@@ -183,6 +183,15 @@ azure_default_remember_me=true
     
     docker login --username AWS --password $TEMP_ECR_TOKEN 410778887951.dkr.ecr.us-east-1.amazonaws.com
     ```
+
+8.  **Configure this token** for a process to be used in Kubernetes section later:
+    ```
+    export BASE64_CONFIG=$(cat ~/.docker/config.json | base64 -w 0)
+
+    cd ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/output/
+    sed -i "s|<YOUR BASE64 CONFIG.JSON HERE>|$BASE64_CONFIG|g" ecr-secret.yaml
+    ```
+
 8.  **Build our container image** - From a terminal session on the Docker Server we will build our image with this command:
     `docker build -t msp_ops/<YOUR NAMESPACE HERE>-azdevops-cdp-jammy-img .`
 9.  **Tag our image:**  `docker tag msp_ops/<YOUR NAMESPACE HERE>-azdevops-cdp-jammy-img:latest 410778887951.dkr.ecr.us-east-1.amazonaws.com/msp_ops/<YOUR NAMESPACE HERE>-azdevops-cdp-jammy-img:latest`
