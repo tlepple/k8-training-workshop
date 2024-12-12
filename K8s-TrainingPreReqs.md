@@ -156,4 +156,4 @@ git push -u origin main
 
 21.  **Open Azure DevOps** in your browser and navigate to `https://dev.azure.com/Nexus-One/NX1%20Special%20Projects/_git/<YOUR NAMESPACE HERE>-k8-training-workshop?path=/code.md&_a=preview`
 
-22.  The remaining steps are now documenting in the steps above customized for you.
+22.  The remaining steps to be completed in this workshop are in the URL in the previous step. The have been customized for you.
