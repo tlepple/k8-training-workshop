@@ -63,7 +63,7 @@ chmod 0700 ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/setup_out
 
     cd ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/output
     sed -i "s|<BASE64_ENCODED_USERNAME>|$BASE64_USERNAME|g" az_secrets.yaml
-    sed -i "s|<BASE64_ENCODED_PAT>|$BASE64_USERNAME|g" az_secrets.yaml
+    sed -i "s|<BASE64_ENCODED_PAT>|$BASE64_AZ_PAT|g" az_secrets.yaml
    ```
 ---
 
