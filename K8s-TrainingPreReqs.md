@@ -49,10 +49,15 @@ chmod 0700 ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/setup_out
 8.  Update a few files with your Azure DevOps PAT credentials
    - Replace these variables with your credentials that were setup earlier:
    ```bash
+   ####################################################
+   #  Only update these 2 lines with your credentials
+   ####################################################
     export AZ_USERNAME="<YOUR-USERNAME-HERE>"
     export AZURE_PAT="<YOUR-PAT-HERE>"
 
-   
+   ####################################################
+   # Run the below commands as is.  Do NOT update these
+   ####################################################
     cd ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/output
     sed -i "s|<YOUR-USERNAME-HERE>|$AZ_USERNAME|g" entrypoint.sh
     sed -i "s|<YOUR-PAT-HERE>|$AZURE_PAT|g" entrypoint.sh
