@@ -109,7 +109,8 @@ az repos create --name <YOUR NAMESPACE HERE>-k8-training-workshop
 cd ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/output
 git credential-cache exit
 
-git config --global credential.helper manager-core
+#git config --global credential.helper manager-core
+git config --get credential.helper $AZ_USERNAME
 
 git config --global user.name "<YOUR NEXUS USERNAME>"
 git config --global user.email <YOUR NEXUS EMAIL ADDRESS>
