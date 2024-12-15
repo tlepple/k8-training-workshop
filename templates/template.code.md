@@ -254,6 +254,9 @@ mikesplain/openvas                                                            la
 ---
 ## Configure your `nx1_define.yaml` on your desktop PC
    - I will provide you with this file:
+   - cat each of the `yaml` files below to just review them before we create each object:
+
+---
 
 **Export out this config:**
 ```bash
