@@ -6,7 +6,7 @@ services:
     container_name: <YOUR NAMESPACE HERE>-aws-ad-auth
     volumes:
       - type: volume
-        source: <YOUR NAMESPACE HERE>-awsadauth_vol1
+        source: <YOUR NAMESPACE HERE>_awsadauth_vol1
         target: /app
     command: ["tail", "-f", "/dev/null"]
 
