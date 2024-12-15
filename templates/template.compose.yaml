@@ -11,5 +11,5 @@ services:
     command: ["tail", "-f", "/dev/null"]
 
 volumes:
-  awsadauth_vol1:
+  <YOUR NAMESPACE HERE>_awsadauth_vol1:
     external: true
