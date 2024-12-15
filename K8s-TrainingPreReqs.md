@@ -62,8 +62,8 @@ chmod 0700 ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/setup_out
     sed -i "s|<YOUR-USERNAME-HERE>|$AZ_USERNAME|g" entrypoint.sh
     sed -i "s|<YOUR-PAT-HERE>|$AZURE_PAT|g" entrypoint.sh
 
-    export BASE64_USERNAME=$(echo -n '$AZ_USERNAME' | base64 -w 0)
-    export BASE64_AZ_PAT=$(echo -n '$AZURE_PAT' | base64 -w 0)
+    export BASE64_USERNAME=$(echo -n "$AZ_USERNAME" | base64 -w 0)
+    export BASE64_AZ_PAT=$(echo -n "$AZURE_PAT" | base64 -w 0)
 
 
     cd ~/docker/compose/<YOUR NAMESPACE HERE>/k8-training-workshop/output
