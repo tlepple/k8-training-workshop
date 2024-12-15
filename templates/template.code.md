@@ -22,7 +22,7 @@ Tags:  Kubernetes | K8s | Docker | Ubuntu
     ```
 4.  **Create a docker volume for our new container to use**
     ```bash
-    docker volume create <YOUR NAMESPACE HERE>-awsadauth_vol1
+    docker volume create <YOUR NAMESPACE HERE>_awsadauth_vol1
     ```
 5.  **Create a docker container using our new image via `compose`**
     ```bash
