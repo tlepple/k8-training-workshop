@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   awsbuild:
     image: amd64/ubuntu:<YOUR NAMESPACE HERE>-azdevops-cdp-jammy-img
